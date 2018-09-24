@@ -20,16 +20,16 @@ const InputContainer = styled.div`
   border-radius: 5px;
   width: 100%;
   box-shadow: 0 2px 3px 0 rgba(0, 0, 0, 0.2);
-  margin-bottom: 20px;
 `;
 
 const Error = styled.div`
   color: #ff0051;
-  height: 0;
+  padding-top: 20px;
+  height: 30px;
 `;
 
 const CheckboxContainer = styled.div`
-  margin-top: 100px;
+  margin-top: 90px;
   width: 300px;
 `;
 
