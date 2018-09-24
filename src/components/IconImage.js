@@ -12,6 +12,7 @@ const StyledImage = styled.img`
 const Circle = styled.div`
   display: inline-block;
   position: relative;
+  cursor: pointer;
   border-radius: 50%;
   width: 30px;
   height: 30px;

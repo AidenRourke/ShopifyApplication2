@@ -6,19 +6,21 @@ const StyledInput = styled.input`
   font-weight: bold;
   font-size: 16px;
   width: 100%;
+  box-sizing: border-box;
   padding: 0;
   color: #7e24fa;
   height: 50px;
   line-height: 30px;
-  border: none;
+  border: 2px solid ${props => props.error ? "#ff0051" : "#fff"};
   ::placeholder {
     color: #caaef2;
   }
+  
 `;
 
 export default class Input extends Component {
     render() {
-        const {errorText, value, ...props} = this.props;
+        const {...props} = this.props;
         return <StyledInput {...props}/>;
     }
 }

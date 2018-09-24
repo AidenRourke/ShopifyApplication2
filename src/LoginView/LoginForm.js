@@ -9,30 +9,67 @@ const LoginFormContainer = styled.div`
   top: 0; left: 0; bottom: 0; right: 0;  
   height: 325px;
   width: 300px;
+  text-align: center;
 `;
 
 const InputContainer = styled.div`
+  border-radius: 5px;
   width: 100%;
   box-shadow: 0 2px 3px 0 rgba(0, 0, 0, 0.2);
-  overflow: hidden;
-  border-radius: 5px;
+`;
+
+const Error = styled.div`
+  color: #ff0051;
+  height: 0;
 `;
 
 const CheckboxContainer = styled.div`
   margin-top: 150px;
   width: 300px;
-  text-align: center;
-`
+`;
 
 export default class LoginForm extends Component {
+    state = {
+        username: "",
+        password: "",
+        errors: {}
+    };
+
+    handleSubmit = async () => {
+        const {username, password} = this.state;
+        const {onSubmit} = this.props;
+
+        const errors = {};
+        if (username.length < 8 || username.length > 24) {
+            errors.username = "username must be between 8 and 24 characters";
+        }
+        if (password.length < 8 || username.length > 24) {
+            errors.password = "password must be between 8 and 24 characters";
+        }
+        this.setState({errors});
+
+        if (Object.keys(errors).length === 0) {
+            this.setState({loading: true});
+            setTimeout(() => {
+                this.setState({loading: false});
+                onSubmit();
+            }, 4000)
+        }
+    }
+    ;
 
     render() {
+        const {username, password, errors, loading} = this.state;
         return <LoginFormContainer>
             <InputContainer>
-                <Input style={{marginBottom: "2px"}} placeholder="username"/>
-                <Input type="password" placeholder="password"/>
-                <Button>login</Button>
+                <Input value={username} onChange={e => this.setState({username: e.target.value})}
+                       style={{borderRadius: "5px 5px 0 0", marginBottom: 2}} placeholder="username"
+                       error={!!errors.username}/>
+                <Input value={password} onChange={e => this.setState({password: e.target.value})}
+                       type="password" placeholder="password" error={!!errors.password && !errors.username}/>
+                <Button loading={loading} style={{borderRadius: "0 0 5px 5px"}} onClick={this.handleSubmit}>login</Button>
             </InputContainer>
+            <Error>{errors.username || errors.password}</Error>
             <CheckboxContainer>
                 <Checkbox type="checkbox" label="remember me"/>
             </CheckboxContainer>

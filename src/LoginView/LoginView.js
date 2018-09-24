@@ -13,7 +13,7 @@ const LoginViewContainer = styled.div`
 export default class LoginView extends Component {
     render() {
         return <LoginViewContainer>
-            <LoginForm/>
+            <LoginForm onSubmit={this.props.onSubmit}/>
             <MediaFooter/>
         </LoginViewContainer>
     }
