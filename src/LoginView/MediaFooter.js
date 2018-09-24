@@ -14,7 +14,7 @@ const Footer = styled.div`
   width: 100%;  
   color: #7e24fa;
   @media only screen and (max-width: 768px) {
-     bottom: 0;
+     bottom: 10px;
   }
 `;
 
