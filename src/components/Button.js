@@ -8,9 +8,10 @@ const ButtonContainer = styled.button`
   font-weight: bold;
   font-size: 16px;
   width: 100%;
-  background-color: #7135EF;
+  background-color: #7e24fa;
   color: white;
-`
+  cursor: pointer; 
+`;
 
 export default class Button extends Component {
     render() {
