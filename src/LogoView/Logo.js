@@ -4,10 +4,15 @@ import acmestackIcon from "../svg/logo-acmestack.svg"
 
 const LogoContainer = styled.div`
    text-align: center;
+   margin-top: 200px;
+   @media only screen and (max-width: 768px) {
+     margin-top: 50px;
+   }
 `;
 
 const LogoText = styled.div`
-   font-size: 30px;
+   font-size: 25px;
+   font-weight: bold;
    color: #fff;
    margin-bottom: 25px;
 `;
@@ -15,8 +20,8 @@ const LogoText = styled.div`
 const LogoImage = styled.img`
    background-color: #fff;
    padding: 10px;
-   height: 60px;
-   width: 60px;
+   height: 50px;
+   width: 50px;
    border: 2px solid #caaef2;
    border-radius: 10px;
 `;

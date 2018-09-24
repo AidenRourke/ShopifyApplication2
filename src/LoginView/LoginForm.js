@@ -10,6 +10,10 @@ const LoginFormContainer = styled.div`
   height: 325px;
   width: 300px;
   text-align: center;
+  @media only screen and (max-width: 768px) {
+    bottom: 178px;
+  }
+
 `;
 
 const InputContainer = styled.div`
@@ -24,7 +28,7 @@ const Error = styled.div`
 `;
 
 const CheckboxContainer = styled.div`
-  margin-top: 150px;
+  margin-top: 100px;
   width: 300px;
 `;
 
@@ -53,7 +57,7 @@ export default class LoginForm extends Component {
             setTimeout(() => {
                 this.setState({loading: false});
                 onSubmit();
-            }, 4000)
+            }, 2000)
         }
     }
     ;
@@ -63,7 +67,7 @@ export default class LoginForm extends Component {
         return <LoginFormContainer>
             <InputContainer>
                 <Input value={username} onChange={e => this.setState({username: e.target.value})}
-                       style={{borderRadius: "5px 5px 0 0", marginBottom: 2}} placeholder="username"
+                       style={{borderRadius: "5px 5px 0 0", marginBottom: 1}} placeholder="username"
                        error={!!errors.username}/>
                 <Input value={password} onChange={e => this.setState({password: e.target.value})}
                        type="password" placeholder="password" error={!!errors.password && !errors.username}/>

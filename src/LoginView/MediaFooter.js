@@ -13,6 +13,9 @@ const Footer = styled.div`
   bottom: 40px;
   width: 100%;  
   color: #7e24fa;
+  @media only screen and (max-width: 768px) {
+     bottom: 0;
+  }
 `;
 
 const FooterText = styled.div`
@@ -24,8 +27,8 @@ export default class MediaFooter extends Component {
     render() {
         return <Footer>
             <FooterText><i>or login with</i></FooterText>
-            <IconImage src={facebookIcon}/>
             <IconImage src={googleIcon}/>
+            <IconImage src={facebookIcon}/>
             <IconImage src={twitterIcon}/>
         </Footer>
     }
