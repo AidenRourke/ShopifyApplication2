@@ -5,8 +5,10 @@ import {Button, Checkbox, Input} from "../components";
 
 const LoginFormContainer = styled.div`
   margin: auto;
+  position: absolute;
+  top: 0; left: 0; bottom: 0; right: 0;  
+  height: 325px;
   width: 300px;
-  vertical-align: middle;
 `;
 
 const InputContainer = styled.div`
@@ -17,7 +19,7 @@ const InputContainer = styled.div`
 `;
 
 const CheckboxContainer = styled.div`
-  margin-top: 100px;
+  margin-top: 150px;
   width: 300px;
   text-align: center;
 `
