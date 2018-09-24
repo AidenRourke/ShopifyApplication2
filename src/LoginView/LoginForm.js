@@ -29,7 +29,7 @@ const Error = styled.div`
 `;
 
 const CheckboxContainer = styled.div`
-  margin-top: 90px;
+  margin-top: 50px;
   width: 300px;
 `;
 

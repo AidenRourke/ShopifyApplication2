@@ -13,12 +13,12 @@ const LogoContainer = styled.div`
 const LogoText = styled.div`
    font-size: 25px;
    font-weight: bold;
-   color: #fff;
+   color: #f4ecff;
    margin-bottom: 25px;
 `;
 
 const LogoImage = styled.img`
-   background-color: #fff;
+   background-color: #f4ecff;
    padding: 10px;
    height: 50px;
    width: 50px;
